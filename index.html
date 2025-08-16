@@ -1,127 +1,191 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>许庆东的个人主页</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-bottom: 2px solid #4CAF50;
-      padding-bottom: 8px;
-    }
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .project {
-      flex: 1 1 calc(50% - 20px);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fafafa;
-    }
-    .project img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .project-content {
-      padding: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi, 我是许庆东</title>
+    <link rel="icon" href="c:\Users\81223\Downloads\favicon_io (5)\favicon.ico" type="image/x-icon"> 
+    <style>
+        /* 为整个body设置基础样式 */
+        body {
+            /* 使用系统字体，保证在不同操作系统下显示一致 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            margin: 0; /* 移除默认外边距 */
+            padding: 2rem; /* 页面内边距 */
+            background-color: #f7f9fc; /* 背景色，浅灰色 */
+            color: #333; /* 字体颜色 */
+            line-height: 1.6; /* 行高，让文字更易读 */
+        }
+
+        /* 主容器，用于居中和限制页面最大宽度 */
+        .container {
+            max-width: 800px; /* 最大宽度 */
+            margin: 0 auto; /* 水平居中 */
+            display: flex; /* 使用Flex布局 */
+            flex-direction: column; /* 垂直排列子元素 */
+            align-items: center; /* 子元素在交叉轴上居中对齐 */
+        }
+
+        /* 头部区域的样式 */
+        .header {
+            text-align: center; /* 文字居中 */
+            margin-bottom: 2rem; /* 底部外边距 */
+        }
+
+        /* 头部标题的样式 */
+        .header-title {
+            font-size: 2.5rem; /* 字体大小 */
+            font-weight: 600; /* 字体粗细 */
+            color: #1a1a1a; /* 字体颜色 */
+            display: flex; /* 使用Flex布局 */
+            align-items: center; /* 垂直居中对齐子元素 */
+            justify-content: center; /* 水平居中对齐子元素 */
+            gap: 1rem; /* 子元素之间的间距 */
+        }
+
+        /* 头像图片的样式 */
+        .profile-pic {
+            width: 150px; /* 宽度 */
+            height: 150px; /* 高度 */
+            border-radius: 50%; /* 圆形图片 */
+            margin-bottom: 1rem; /* 底部外边距 */
+        }
+
+        /* 所有section（区块）的通用样式 */
+        .section {
+            display: flex; /* 使用Flex布局 */
+            align-items: flex-start; /* 顶部对齐子元素 */
+            margin-bottom: 1.5rem; /* 底部外边距 */
+            width: 100%; /* 宽度占满父容器 */
+            padding: 1rem; /* 内边距 */
+            background-color: #fff; /* 白色背景 */
+            border-radius: 12px; /* 圆角 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+            gap: 2rem; /* 子元素间距 */
+        }
+
+        /* section中图标的样式 */
+        .section-icon {
+            font-size: 1.5rem; /* 字体大小 */
+            margin-right: 0.5rem; /* 右侧外边距 */
+        }
+        
+        /* section中内容的样式，用于占据剩余空间 */
+        .section-content {
+            flex-grow: 1;
+        }
+
+        /* "关于我"区块的样式 */
+        .about-section {
+            display: flex; /* 使用Flex布局 */
+            align-items: center; /* 垂直居中对齐子元素 */
+            justify-content: space-between; /* 子元素之间留出空间 */
+            width: 100%; /* 宽度占满 */
+        }
+
+        /* "关于我"区块中文字部分的样式 */
+        .about-text {
+            flex: 1; /* 占据剩余空间 */
+            display: flex;
+            flex-direction: column; /* 让子元素（p标签）垂直堆叠 */
+            align-items: center; /* 在容器中水平居中对齐所有子元素 */
+        }
+
+        /* "关于我"区块中每个段落的样式 */
+        .about-text p {
+            margin: 1rem 0; /* 顶部和底部外边距 */
+            display: flex; /* 使用Flex布局 */
+            align-items: flex-start; /* 顶部对齐子元素 */
+            gap: 0.5rem; /* 子元素间距 */
+        }
+
+        /* "关于我"区块中图标的样式 */
+        .about-text .icon {
+            font-size: 1.25rem; /* 字体大小 */
+            margin-right: 0.5rem; /* 右侧外边距 */
+        }
+
+        /* 插画图片的样式 */
+        .illustration {
+            width: 100; /* 宽度 */
+            height: auto; /* 高度自适应 */
+            margin-left: 2rem; /* 左侧外边距 */
+        }
+
+        /* 列表项（子弹点）的样式 */
+        .bullet-point {
+            display: flex; /* 使用Flex布局 */
+            align-items: flex-start; /* 顶部对齐子元素 */
+            margin-bottom: 1rem; /* 底部外边距 */
+        }
+
+        /* 列表项图标的样式 */
+        .bullet-point-icon {
+            font-size: 1.2rem; /* 字体大小 */
+            margin-right: 0.5rem; /* 右侧外边距 */
+            flex-shrink: 0; /* 防止图标被压缩 */
+        }
+
+        .invisible-dots {
+            color: transparent; /* 将文字颜色设为透明 */
+        }
+
+
+        /* 媒体查询：当屏幕宽度小于或等于768px时应用以下样式 */
+        @media (max-width: 768px) {
+            /* "关于我"区块改为垂直排列 */
+            .about-section {
+                flex-direction: column;
+                text-align: center; /* 文字居中 */
+            }
+            /* 插画图片上移 */
+            .illustration {
+                margin: 2rem 0 0 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>欢迎来到许庆东的个人主页</h1>
-    <p>多模态感知 | 数据闭环仿真 | 3D 生成模型</p>
-  </header>
-
-  <section>
-    <h2>自我介绍</h2>
-    <p>
-      大家好，我是许庆东，一名专注于电子工程与人工智能的研究者。我本科毕业于<strong>哈尔滨理工大学自动化学院机器人工程专业</strong>，目前在<strong>东北大学攻读控制科学与工程硕士</strong>。我的主要研究方向包括：<strong>自动驾驶场景下的多模态感知、数据闭环仿真以及3D生成模型</strong>。
-    </p>
-    <p>
-      我拥有丰富的实习与项目经验，致力于将前沿技术应用于实际问题，并在机器人和自动驾驶领域持续探索。
-    </p>
-  </section>
-
-  <section>
-    <h2>项目与经历</h2>
-    <div class="projects">
-  
-      <div class="project-item">
-        <h3>旷视科技实习经历（2024年11月 - 2025年7月）</h3>
-        <p><strong>职位：</strong>3D生成模型研发工程师</p>
-        <p><strong>主要工作：</strong></p>
-        <ul>
-          <li><strong>交通标牌合成系统：</strong>负责研发3D生成模型以解决稀有标牌的数据长尾问题，该项目已成功落地并应用于数据闭环仿真。</li>
-          <li><strong>激光雷达点云深度补全：</strong>为解决单目深度估计对稠密深度数据的需求，设计了深度真值生产流水线，并研究了基于扩散生成模型的点云补全方法。</li>
-          <li><strong>场景级3D点云生成：</strong>研究3D生成模型，以解决3DGS在跨车任务初始化时对稠密深度数据的需求。</li>
-        </ul>
-        <div style="text-align: center; margin-top: 20px;">
-          <img src="your-project-demo-1.png" alt="项目演示图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-          <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">交通标牌合成系统效果演示</p>
-        </div>
-      </div>
-  
-      <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
-  
-      <div class="project-item">
-        <h3>基于增强现实的智能驾驶感知系统</h3>
-        <p>与中国兵器集团合作项目</p>
-        <p><strong>主要工作：</strong>负责无人车软硬件系统的整体框架设计，并对3D目标检测算法进行性能优化，以提升感知系统的鲁棒性与精度。</p>
-        <div style="text-align: center; margin-top: 20px;">
-          <img src="your-project-demo-2.png" alt="项目演示图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-          <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">智能驾驶感知系统演示</p>
-        </div>
-      </div>
-  
+<div class="container">
+    <div class="header">
+        <img src="c:\Users\81223\Pictures\Camera Roll\shuai_life.jpg" alt="Profile Picture" class="profile-pic">
+        <h1 class="header-title">
+            <span class="emoji">👋</span> Hi, 我是许庆东
+        </h1>
     </div>
-  </section>
-  
 
-  <section>
-    <h2>学术成果</h2>
-    <p>
-      我在相关领域发表了多篇学术论文：
-    </p>
-    <ul>
-      <li>一篇关于3D生成模型的论文（目前在<strong>ICRA</strong>投稿中）。</li>
-      <li>一篇合作发表的<strong>IROS</strong>论文，主题为SLAM中的鲁棒里程计。</li>
-    </ul>
-  </section>
+    <!-- <div class="about-section">
+        <div class="about-text">
+            <p>☀️ 东北大学在读硕士（全日制），专业是控制科学与工程，预计2026年6月毕业。</p>
+            <p>✨ 热衷于技术，主要研究多模态感知、数据闭环仿真、Diffusion3D生成模型。<span class="invisible-dots">..</span></p>
+            <p>⏳ 人生目标是不断寻找自我、实现个人价值，与优秀的前辈和同伴共同进步。<span class="invisible-dots">...</span></p>
 
-  <section>
-    <h2>个人技能总结</h2>
-    <p>
-      <strong>编程语言：</strong>C++，Python<br>
-      <strong>操作系统：</strong>Linux，熟悉ROS操作系统<br>
-      <strong>专业技能：</strong>具备扎实的SLAM基础、点云处理和深度学习算法经验。目前主要专注于生成模型的研究，熟悉VAE及其变种，以及基于DDPM/DDIM范式的DiT扩散模型，并具备针对室外场景进行扩散生成的实际项目经验。
-    </p>
-  </section>
+        </div>
+    </div> -->
+
+    <div class="section" style="margin-top: 2rem;">
+        <h2 class="section-icon">☀️</h2>
+            <div class="section-content">
+                <h2 style="margin: 0;">我的背景</h2>
+                <p>2019年9月-2023年6月，【哈尔滨理工大学】【自动化学院】【机器人工程专业】，积极参与科研竞赛并收获奖项，获评黑龙江省优秀毕业生；</p>
+                <p>2023年9月-2026年6月，以专业排名第一推荐面试到【东北大学】【控制科学与工程专业】，从事自动驾驶感知领域的学习和研究；</p> 
+                <p>2024年11月-2025年7月，北京旷视科技算法实习生，负责跟进前沿生成式AI（Diffusion/DiT/VAE）技术并应用于具体任务，开发基于生成式方法的数据闭环产线、数据生产Pipeline。</p> 
+            </div>
+    </div>
+
+
+    <div class="section" style="margin-top: 2rem;">
+        <h2 class="section-icon">☀️</h2>
+            <div class="section-content">
+                <h2 style="margin: 0;">项目介绍</h2>
+                <p>2019年9月-2023年6月，哈尔滨理工大学 自动化学院 机器人工程专业，积极参与科研竞赛并收获奖项，获评黑龙江省优秀毕业生；</p>
+                <p>2023年9月-2026年6月，以专业排名第一推荐面试到东北大学控制科学与工程专业，从事自动驾驶感知领域的学习和研究；</p> 
+                <p>2024年11月-2025年7月，北京旷视科技算法实习生，负责跟进前沿生成式AI（Diffusion/DiT/VAE）技术并应用于具体任务，开发基于生成式方法的数据闭环产线、数据生产Pipeline。</p> 
+            </div>
+    </div>
+
+</div>
 
 </body>
 </html>
