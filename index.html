@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi, 我是许庆东</title>
     <link rel="icon" href="img\favicon.ico" type="image/x-icon"> 
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/simple-lightbox.min.css">
+
+
     <style>
         /* 为整个body设置基础样式 */
         body {
@@ -130,6 +134,20 @@
             color: transparent; /* 将文字颜色设为透明 */
         }
 
+        .gallery img {
+            max-width: 100%; /* 关键代码：限制图片的最大宽度为容器的100% */
+            height: auto; /* 保持图片的宽高比 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
 
         /* 媒体查询：当屏幕宽度小于或等于768px时应用以下样式 */
         @media (max-width: 768px) {
@@ -146,6 +164,7 @@
     </style>
 </head>
 <body>
+
 
 <div class="container">
     <div class="header">
@@ -181,26 +200,185 @@
             <h2 style="margin: 0;">项目介绍</h2>
 
                 <div class="project-item">
-                    <h3>交通标牌合成产线</h3>
+                    <h3>一、交通标牌合成产线</h3>
                     <p>通过生成模型合成稀缺标注数据，解决长尾标牌感知模型漏检问题。</p>
                     <!-- <p><strong>主要工作：</strong>负责无人车软硬件系统的整体框架设计，并对3D目标检测算法进行性能优化，以提升感知系统的鲁棒性与精度。</p> -->
                     <div style="text-align: center; margin-top: 20px;">
-                    <img src="img\pipeline_traffic.png" alt="项目演示图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">智能驾驶感知系统演示</p>
-                    <img src="img\traffic_mark.png" alt="项目演示图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">合成结果</p>
+                    <img src="img/project1/traffic_pic_hard.png" alt="长尾标牌示例" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">长尾标牌示例</p>
 
+
+                    <p style="text-align: left;"> ✨ 漏检的本质是样本不平衡的问题，通过生成模型修改替换人工标注数据，生成高质量伪标签。</p>
+                    <p style="text-align: left;"> ✨ 整体的思路：①提取掩膜、粘贴长尾标牌；②融合背景，消除前背景差异。</p>
+
+
+
+                    <img src="img/project1/traffic_pic0.png" alt="系统流程" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">系统流程</p>
+
+
+                    <img src="img/project1/MultiEditor.png" alt="模型框图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">模型框图</p>
+
+                    <p style="text-align: left;"> ✨ 生成的结果样例，前背景能很好的融合到一起。</p>
+
+
+
+                    <div class="gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-top: 0;">
+                        <a href="img/project1/output_image_8304.jpg" title="第一张图的描述">
+                            <img src="img/project1/output_image_8304.jpg" alt="第一张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_8305.jpg" title="第二张图的描述">
+                            <img src="img/project1/output_image_8305.jpg" alt="第二张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10055.jpg" title="第三张图的描述">
+                            <img src="img/project1/output_image_10055.jpg" alt="第三张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10056.jpg" title="第四张图的描述">
+                            <img src="img/project1/output_image_10056.jpg" alt="第四张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                    </div>
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">生成结果</p>
+
+
+                    <!-- <p>✨ 也会出现 bad case；人工质检效率严重跟不上数据生产速度，使用VLM交叉质检；</p> -->
+                    <p style="text-align: left;"> ✨ 也会出现 bad case；人工质检效率严重跟不上数据生产速度，使用 VLM 交叉质检。</p>
+                    
+                    <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/traffic_pic_good_bad.png" title="traffic_pic_good_bad">
+                                <img src="img/project1/traffic_pic_good_bad.png" alt="traffic_pic_good_bad" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">traffic_pic_good_bad</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/gpt1.png" title="chatgpt4.1验证">
+                                <img src="img/project1/gpt1.png" alt="chatgpt4.1验证" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">chatgpt4.1验证</p>
+                        </div>
+                    </div>
+
+
+                    <p style="text-align: left;"> ✨ VLM交叉质检的数据经人工质检反馈，合格率超98%；交付下游模型训练，感知性能提升显著。</p>
+                    <p style="text-align: left;"> ✨ 目前该产线已落地使用。</p>
+                    
                     </div>
                 </div>
 
-
-            <!-- <p>2019年9月-2023年6月，哈尔滨理工大学 自动化学院 机器人工程专业，积极参与科研竞赛并收获奖项，获评黑龙江省优秀毕业生；</p>
-            <p>2023年9月-2026年6月，以专业排名第一推荐面试到东北大学控制科学与工程专业，从事自动驾驶感知领域的学习和研究；</p> 
-            <p>2024年11月-2025年7月，北京旷视科技算法实习生，负责跟进前沿生成式AI（Diffusion/DiT/VAE）技术并应用于具体任务，开发基于生成式方法的数据闭环产线、数据生产Pipeline。</p>  -->
         </div>
     </div>
 
+
+
+
+
+
+
+    <div class="section" style="margin-top: 2rem;">
+        <!-- <h2 class="section-icon">☀️</h2> -->
+        <div class="section-content">
+            <h2 style="margin: 0;">项目介绍</h2>
+
+                <div class="project-item">
+                    <h3>二、点云深度补全</h3>
+                    <p>针对单目深度估计研发任务对稠密深度的需要，开发稠密深度真值生产 Pipeline，并探究稀疏雷达点云补全的生成式 AI 方法。</p>
+                    <div style="text-align: center; margin-top: 20px;">
+                    <!-- <img src="img/project1/traffic_pic_hard.png" alt="长尾标牌示例" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">长尾标牌示例</p>
+
+
+                    <p style="text-align: left;"> ✨ 漏检的本质是样本不平衡的问题，通过生成模型修改替换人工标注数据，生成高质量伪标签。</p>
+                    <p style="text-align: left;"> ✨ 整体的思路：①提取掩膜、粘贴长尾标牌；②融合背景，消除前背景差异。</p>
+
+
+
+                    <img src="img/project1/traffic_pic0.png" alt="系统流程" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">系统流程</p>
+
+
+                    <img src="img/project1/MultiEditor.png" alt="模型框图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">模型框图</p>
+
+                    <p style="text-align: left;"> ✨ 生成的结果样例，前背景能很好的融合到一起。</p>
+
+
+
+                    <div class="gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-top: 0;">
+                        <a href="img/project1/output_image_8304.jpg" title="第一张图的描述">
+                            <img src="img/project1/output_image_8304.jpg" alt="第一张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_8305.jpg" title="第二张图的描述">
+                            <img src="img/project1/output_image_8305.jpg" alt="第二张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10055.jpg" title="第三张图的描述">
+                            <img src="img/project1/output_image_10055.jpg" alt="第三张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10056.jpg" title="第四张图的描述">
+                            <img src="img/project1/output_image_10056.jpg" alt="第四张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                    </div>
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">生成结果</p>
+
+
+                    <p style="text-align: left;"> ✨ 也会出现 bad case；人工质检效率严重跟不上数据生产速度，使用 VLM 交叉质检。</p>
+                    
+                    <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/traffic_pic_good_bad.png" title="traffic_pic_good_bad">
+                                <img src="img/project1/traffic_pic_good_bad.png" alt="traffic_pic_good_bad" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">traffic_pic_good_bad</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/gpt1.png" title="chatgpt4.1验证">
+                                <img src="img/project1/gpt1.png" alt="chatgpt4.1验证" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">chatgpt4.1验证</p>
+                        </div>
+                    </div>
+
+
+                    <p style="text-align: left;"> ✨ VLM交叉质检的数据经人工质检反馈，合格率超98%；交付下游模型训练，感知性能提升显著。</p>
+                    <p style="text-align: left;"> ✨ 目前该产线已落地使用。</p> -->
+                    
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+
 </div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script> -->
+<script src="js/simple-lightbox.min.js"></script>
+<script> 
+    new SimpleLightbox('.gallery a', {
+        // animation: false,
+        // fadeSpeed: 0,
+        // disableAnimation: true
+        animationSlide: false,  // 禁止滑动切换动画
+        animationSpeed: 0,      // 动画速度设为 0
+        fadeSpeed: 0,           // 禁止淡入淡出
+    });
+</script>
 
 </body>
 </html>
