@@ -163,8 +163,9 @@
         }
     </style>
 </head>
-<body>
 
+
+<body>
 
 <div class="container">
     <div class="header">
@@ -292,9 +293,36 @@
                     <h3>二、点云深度补全</h3>
                     <p>针对单目深度估计研发任务对稠密深度的需要，开发稠密深度真值生产 Pipeline，并探究稀疏雷达点云补全的生成式 AI 方法。</p>
                     <div style="text-align: center; margin-top: 20px;">
+
+
+                    <img src="img/project2/all.png" alt="汇总" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">汇总</p>
+
+
+                    <!-- <video width="640" height="360" controls>
+                    <source src="img/project2/zhaji_src.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video> -->
+
+
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 75px;">
+                    <video controls style="flex: 1 1 45%; max-width: 45%; height: auto;">
+                        <source src="img/project2/zhaji_src.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video controls style="flex: 1 1 45%; max-width: 45%; height: auto;">
+                        <source src="img/project2/zhaji_dst.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+
+
                     <!-- <img src="img/project1/traffic_pic_hard.png" alt="长尾标牌示例" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                     <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">长尾标牌示例</p>
 
+
+                    
 
                     <p style="text-align: left;"> ✨ 漏检的本质是样本不平衡的问题，通过生成模型修改替换人工标注数据，生成高质量伪标签。</p>
                     <p style="text-align: left;"> ✨ 整体的思路：①提取掩膜、粘贴长尾标牌；②融合背景，消除前背景差异。</p>
@@ -365,6 +393,127 @@
     </div>
 
 
+
+
+
+
+
+    <div class="section" style="margin-top: 2rem;">
+        <!-- <h2 class="section-icon">☀️</h2> -->
+        <div class="section-content">
+            <h2 style="margin: 0;">项目介绍</h2>
+
+                <div class="project-item">
+                    <h3>三、场景生成</h3>
+                    <p>稀疏点云生成稠密完整的场景点云。</p>
+                    <div style="text-align: center; margin-top: 20px;">
+
+
+                    <img src="img/project3/all.png" alt="汇总" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">汇总</p>
+
+
+                    <video width="640" height="360" controls>
+                    <source src="img/project3/result.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+
+
+                    <!-- <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 75px;">
+                    <video controls style="flex: 1 1 45%; max-width: 45%; height: auto;">
+                        <source src="img/project2/zhaji_src.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video controls style="flex: 1 1 45%; max-width: 45%; height: auto;">
+                        <source src="img/project2/zhaji_dst.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div> -->
+
+
+                    <!-- <img src="img/project1/traffic_pic_hard.png" alt="长尾标牌示例" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">长尾标牌示例</p>
+
+
+                    
+
+                    <p style="text-align: left;"> ✨ 漏检的本质是样本不平衡的问题，通过生成模型修改替换人工标注数据，生成高质量伪标签。</p>
+                    <p style="text-align: left;"> ✨ 整体的思路：①提取掩膜、粘贴长尾标牌；②融合背景，消除前背景差异。</p>
+
+
+
+                    <img src="img/project1/traffic_pic0.png" alt="系统流程" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">系统流程</p>
+
+
+                    <img src="img/project1/MultiEditor.png" alt="模型框图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">模型框图</p>
+
+                    <p style="text-align: left;"> ✨ 生成的结果样例，前背景能很好的融合到一起。</p>
+
+
+
+                    <div class="gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-top: 0;">
+                        <a href="img/project1/output_image_8304.jpg" title="第一张图的描述">
+                            <img src="img/project1/output_image_8304.jpg" alt="第一张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_8305.jpg" title="第二张图的描述">
+                            <img src="img/project1/output_image_8305.jpg" alt="第二张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10055.jpg" title="第三张图的描述">
+                            <img src="img/project1/output_image_10055.jpg" alt="第三张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                        
+                        <a href="img/project1/output_image_10056.jpg" title="第四张图的描述">
+                            <img src="img/project1/output_image_10056.jpg" alt="第四张图" style="max-width: 100%; height: auto; border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        </a>
+                    </div>
+                    <p style="font-style: italic; color: #666; font-size: 0.9em; margin-top: 10px;">生成结果</p>
+
+
+                    <p style="text-align: left;"> ✨ 也会出现 bad case；人工质检效率严重跟不上数据生产速度，使用 VLM 交叉质检。</p>
+                    
+                    <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/traffic_pic_good_bad.png" title="traffic_pic_good_bad">
+                                <img src="img/project1/traffic_pic_good_bad.png" alt="traffic_pic_good_bad" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">traffic_pic_good_bad</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="img/project1/gpt1.png" title="chatgpt4.1验证">
+                                <img src="img/project1/gpt1.png" alt="chatgpt4.1验证" 
+                                    style="width: 100%; height: auto; border-radius: 8px; 
+                                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            </a>
+                            <p style="font-style: italic; color: #666; font-size: 0.9em; margin: 0;">chatgpt4.1验证</p>
+                        </div>
+                    </div>
+
+
+                    <p style="text-align: left;"> ✨ VLM交叉质检的数据经人工质检反馈，合格率超98%；交付下游模型训练，感知性能提升显著。</p>
+                    <p style="text-align: left;"> ✨ 目前该产线已落地使用。</p> -->
+                    
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
 </div>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script> -->
@@ -382,3 +531,6 @@
 
 </body>
 </html>
+
+
+
